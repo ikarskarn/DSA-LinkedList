@@ -8,14 +8,15 @@ class LinkedList {
     }
 
     insertLast(item) {
+        //insert into first node if empty
         if (this.head === null) {
             this.insertFirst(item);
         } else {
-            let tempNode = this.head;
-            while (tempNode.next !== null) {
-                tempNode - tempNode.next;
+            let currentNode = this.head;
+            while (currentNode.next !== null) {
+                currentNode = currentNode.next;
             }
-            tempNode.next = new _Node(item, null);
+            currentNode.next = new _Node(item, null);
         }
     }
 
@@ -36,28 +37,29 @@ class LinkedList {
     }
 
     remove(item) {
-        //is the list empty?
         if (!this.head) {
-            return null;
+            console.log("No Such Item");
+            return;
         }
-        //is the item to remove the first item?
+
         if (this.head === item) {
             this.head = this.head.next;
             return;
         }
 
-        //set the currentNode as the first node
         let currentNode = this.head;
-        let previousNode = this.head;
+        let previousNode = null;
 
-        while (currentNode !== null && currentNode.value !== item) {
+        while (currentNode.value !== item && currentNode.next !== null) {
             previousNode = currentNode;
             currentNode = currentNode.next;
         }
-        if (currentNode === null) {
-            console.log("Item not found");
+        if (currentNode.next === null) {
+            console.log("no such item");
             return;
         }
         previousNode.next = currentNode.next;
     }
 }
+
+module.exports = LinkedList;
