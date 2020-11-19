@@ -220,6 +220,9 @@ function thirdFromLast(SLL) {
     return currentNode.next.value;
 }
 
+//middle of list
+function middleOfList(SLL) {}
+
 function main() {
     let SLL = new LinkedList();
     console.log("THE LIST IS", isEmpty(SLL));
