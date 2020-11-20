@@ -2,9 +2,9 @@
     "name": "LinkedLists",
     "version": "1.0.0",
     "description": "",
-    "main": "BinarySearchTrees.js",
+    "main": "Practice.js",
     "scripts": {
-        "start": "node src/BinarySearchTrees.js",
+        "start": "node src/Practice.js",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "keywords": [],
